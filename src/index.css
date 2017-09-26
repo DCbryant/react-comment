@@ -2,9 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #fbfbfb;
 }
 
-.wrapper{
+.wrapper {
   width: 500px;
   margin: 10px auto;
   font-size: 14px;
@@ -14,31 +15,31 @@ body {
 }
 
 /* 评论框样式 */
-.comment-input{
+.comment-input {
   background-color: #fff;
   border: 1px solid #f1f1f1;
   padding: 20px;
   margin-bottom: 10px;
 }
 
-.comment-field{
+.comment-field {
   margin-bottom: 15px;
   display: flex;
 }
 
-.comment-field .comment-field-name{
+.comment-field .comment-field-name {
   display: flex;
   flex-basis: 100px;
   font-size: 14px;
 }
 
-.comment-field .comment-field-input{
+.comment-field .comment-field-input {
   display: flex;
   flex: 1;
 }
 
 .comment-field-input input,
-.comment-field-input textarea{
+.comment-field-input textarea {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
   padding: 5px;
@@ -48,19 +49,19 @@ body {
   flex: 1;
 }
 
-.comment-field-input textarea{
+.comment-field-input textarea {
   height: 100px;
 }
 
-.comment-field-button{
+.comment-field-button {
   display: flex;
   justify-content: flex-end;
 }
 
-.comment-field-button button{
+.comment-field-button button {
   padding: 5px 10px;
   width: 80px;
-  border:none;
+  border: none;
   border-radius: 3px;
   background-color: #00a3cf;
   color: #fff;
@@ -68,12 +69,12 @@ body {
   cursor: pointer;
 }
 
-.comment-field-button button:active{
+.comment-field-button button:active {
   background: #13c1f1;
 }
 
 /* 评论列表样式 */
-.comment-list{
+.comment-list {
   background-color: #fff;
   border: 1px solid #f1f1f1;
   padding: 20px;
@@ -81,6 +82,7 @@ body {
 
 /* 评论组件样式 */
 .comment {
+  position: relative;
   display: flex;
   border-bottom: 1px solid #f1f1f1;
   margin-bottom: 10px;
@@ -92,9 +94,31 @@ body {
   flex-shrink: 0;
 }
 
-.comment span {
+.comment-username {
   color: #00a3cf;
   font-style: italic;
+}
+
+.comment-createdtime {
+  padding-right: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.comment:hover .comment-delete {
+  color: #00a3cf;
+}
+
+.comment-delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: transparent;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 .comment p {
@@ -102,3 +126,8 @@ body {
   /*text-indent: 2em;*/
 }
 
+code {
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  padding: 0px 2px;
+}

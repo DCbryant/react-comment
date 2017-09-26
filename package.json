@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-
+    "react-scripts": "1.0.13"
   },
   "scripts": {
     "start": "react-scripts start",
