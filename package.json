@@ -19,5 +19,5 @@
     "deploy": "gh-pages -d build"
 
   },
-  "homepage": "https://DCbryant.github.io/react-commont/build"
+  "homepage": "https://DCbryant.github.io/react-commont/build/index.html"
 }
