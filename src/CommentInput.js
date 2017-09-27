@@ -1,44 +1,32 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import wrapWithLoadData from './wrapWithLoadData'
 class CommentInput extends Component{
     static propTypes = {
-        onSubmit: PropTypes.func
+        onSubmit: PropTypes.func,
+        data: PropTypes.any,
+        saveData: PropTypes.func.isRequired
     }
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            username:'',
+            username:props.data,
             content:''
         }
     }
 
-    // _loadUsername 会从 LocalStorage 加载用户名并且 setState 到组件的 state.username 中。
-    // 那么组件在渲染的时候（render方法）挂载的时候就可以用上用户名了
-    componentWillMount(){
-        this._loadUsername()
-    }
+   
 
     componentDidMount(){
         this.textarea.focus()
     }
 
-    _loadUsername(){
-        const username = localStorage.getItem('username')
-        if(username){
-            this.setState({
-                username:username
-            })
-        }
-    }
-
-    _saveUsername(username){
-        localStorage.setItem('username',username)
-    }
+    
 
     // input失去焦点的时候设置 LocalStorage 中的 username 字段,值为input的值
     handleUsernameBlur(e){
-        this._saveUsername(e.target.value)
+        this.props.saveData(e.target.value)
     }
 
     
@@ -98,4 +86,5 @@ class CommentInput extends Component{
     }
 }
 
+CommentInput = wrapWithLoadData(CommentInput, 'username')
 export default CommentInput
